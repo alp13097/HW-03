@@ -12,10 +12,10 @@ function writePassword() {
     alert("Password is too long, please try again");
     writePassword();
   } else {
-      lower = confirm("Would you like lowercase characters?");
-      upper = confirm("Would you like uppercase characters?");
-      number = confirm("Would you like numeric characters?");
-      specChar = confirm("Would you like special characters?");
+      var lower = confirm("Would you like lowercase characters?");
+      var upper = confirm("Would you like uppercase characters?");
+      var number = confirm("Would you like numeric characters?");
+      var specChar = confirm("Would you like special characters?");
         // Different combinations of criteria for wich fuction to run.
         if (lower === true && upper === true && number === true && specChar === true) {
           var password = generatePassword();
@@ -38,7 +38,7 @@ function writePassword() {
         else if (lower === false && upper === false && number === false && specChar === true) {
           var password = generatePassword7();
         }
-        else if (lower === true && upper === true && number === false && specChar === false) {
+        else if (lower === false && upper === true && number === false && specChar === true) {
           var password = generatePassword8();
         }
         else if (lower === true && upper === false && number === true && specChar === false) {
@@ -149,7 +149,7 @@ function generatePassword7() {
 
 function generatePassword8() {
   length = answer,
-  charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*",
   retVal = "";
 for (i = 0, n = charset.length; i < length; ++i) {
 retVal += charset.charAt(Math.floor(Math.random() * n));
